@@ -27,7 +27,6 @@ jobs:
       uses: dsayling/commit-branch-check-action@v0.1.5
       with:
         github-token: ${{ secrets.TOKEN }}
-        files: ".circleci/config.yml"
         commit-message: "Run workflow"
         dest-branch: ${{ github.event_name }}-${{ github.event.action }}
         verify-checks: true
