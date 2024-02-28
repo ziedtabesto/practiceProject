@@ -18,6 +18,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: main
+        
+    - name: Setup Git
+      run: git config --global --add safe.directory /github/workspace
     - name: Replace config
       run: cp .circleci/${{ github.event_name }}-${{ github.event.action }}.yml .circleci/config.yml
     - name: commit-push_branch-test
