@@ -1,13 +1,14 @@
 name: Circle Workflow
 
-on: 
-  # so these line up to a file in the .circleci/ directory as <event-name>-<type>.yml
-  # e.g. issue_comment-created.yml and issues-opened.yml
-  issue_comment:  
-    types: [created]
-  issues:
-    types: [opened, closed] 
-
+#   issue_comment:  
+#     types: [created]
+#   issues:
+#     types: [opened, closed] 
+on:
+    pull_request:
+      types: [opened]
+      branches:
+        - dev-max
 
 
 jobs:
