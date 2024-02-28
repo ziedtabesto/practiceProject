@@ -10,7 +10,7 @@ jobs:
           name: "Check if this is a PR"
           command: |
             if [ -z "${CIRCLE_PULL_REQUEST}" ]; then
-              echo "This is not a PR."
+              echo "this is message from issueDDDDDDDDDDDDDD."
             else
               echo "this is message from issue"
             fi
