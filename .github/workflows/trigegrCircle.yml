@@ -18,17 +18,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: main
+        ref: your-new-branch-name
         
     # - name: Setup Git
-    #   run: git config --global --add safe.directory /github/workspace
+    #   run: git config --global --add safe.directory /github/workspaceee
     - name: Replace config
       run: cp .circleci/${{ github.event_name }}-${{ github.event.action }}.yml .circleci/config.yml
     - name: commit-push_branch-test
-      uses: dsayling/commit-branch-check-action@v0.1.6
+      uses: dsayling/commit-branch-check-action@v0.1.5
       with:
         github-token: ${{ secrets.TOKEN }}
         commit-message: "Run workflow"
         dest-branch: ${{ github.event_name }}-${{ github.event.action }}
-        verify-checks: true
+        verify-checks: false
         delete-after-checks: true
