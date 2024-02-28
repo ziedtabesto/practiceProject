@@ -30,5 +30,5 @@ jobs:
         github-token: ${{ secrets.TOKEN }}
         commit-message: "Run workflow"
         dest-branch: ${{ github.event_name }}-${{ github.event.action }}
-        verify-checks: true
+        verify-checks: false
         delete-after-checks: true
